@@ -9,12 +9,9 @@ let binarySearch = (array, target, low, high) => {
   if (array[mid] === target) {
     return mid;
   } else if (target > array[mid]) {
-  
-    low = mid + 1;
-    return binarySearch(array, target, low, high);
-  } else if (target < array[mid]) {
-    high = mid - 1;
-    return binarySearch(array, target, low, high);
+    return binarySearch(array, target, (mid + 1), high);
+  } else {
+    return binarySearch(array, target, low, (mid - 1));
   }
 }
 
